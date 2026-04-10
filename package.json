@@ -1,0 +1,43 @@
+{
+  "name": "collabmarkdown",
+  "version": "1.0.0",
+  "description": "A real-time collaborative Markdown editor",
+  "scripts": {
+    "dev:server": "ts-node-dev --respawn --transpile-only server/index.ts",
+    "dev:client": "vite client",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build:server": "tsc -p server/tsconfig.json",
+    "build:client": "vite build client",
+    "build": "npm run build:server && npm run build:client",
+    "start": "node dist/server/index.js"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
+    "@types/ws": "^8.5.10",
+    "@vitejs/plugin-react": "^4.2.1",
+    "concurrently": "^8.2.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.10"
+  },
+  "dependencies": {
+    "@codemirror/basic-setup": "^0.20.0",
+    "@codemirror/state": "^6.4.1",
+    "@codemirror/view": "^6.26.3",
+    "express": "^4.19.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^9.0.1",
+    "remark-gfm": "^4.0.0",
+    "remark-math": "^6.0.0",
+    "rehype-katex": "^7.0.0",
+    "rehype-highlight": "^7.0.0",
+    "ws": "^8.16.0",
+    "y-codemirror.next": "^0.3.2",
+    "y-websocket": "^2.0.3",
+    "yjs": "^13.6.14"
+  }
+}
